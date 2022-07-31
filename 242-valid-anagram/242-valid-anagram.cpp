@@ -5,8 +5,8 @@ public:
         sort(t.begin(),t.end());
         if(s==t)
         {
-            return true;
+            return 1;
         }
-        return false;
+        return 0;
     }
 };
