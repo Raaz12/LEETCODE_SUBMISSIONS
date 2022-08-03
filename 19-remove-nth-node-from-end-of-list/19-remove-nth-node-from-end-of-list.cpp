@@ -22,16 +22,17 @@ public:
             
         }
         temp=head;
+        
         if(count+1==n)    return head->next;
-        int mount=0;
+        
         while(temp!=NULL)
         {
-            mount++;
             
             if(count==n)
             {
                 temp->next=temp->next->next;
-                // delete temp;
+                break;
+                // delete temp->next;
             }
             count--;
             temp=temp->next;
