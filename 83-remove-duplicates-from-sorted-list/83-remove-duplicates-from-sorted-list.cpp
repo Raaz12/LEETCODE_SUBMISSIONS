@@ -23,13 +23,13 @@ public:
             
             if(temp->next!=NULL and temp->val==temp->next->val)
             {
-                ListNode*  next_next=temp->next->next;
+//                 ListNode*  next_next=temp->next->next;
                 
-                ListNode* deletenode=temp->next;
+//                 ListNode* deletenode=temp->next;
                 
-                delete (deletenode);
+//                 delete (deletenode);
                 
-                temp->next=next_next;
+                temp->next=temp->next->next;
                 
             }
             else
