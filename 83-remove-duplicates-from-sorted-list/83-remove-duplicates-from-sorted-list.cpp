@@ -23,8 +23,7 @@ public:
             
             if(temp->next!=NULL and temp->val==temp->next->val)
             {
-                
-                
+                               
                 ListNode* deletenode=temp->next;
                 
                  temp->next=temp->next->next;
