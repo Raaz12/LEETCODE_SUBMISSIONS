@@ -1,17 +1,25 @@
 class Solution {
 public:
+    int sum(int n)
+    {
+        int sum=0;
+        for(int i=1;i<=n;i++)
+        {
+            sum+=i;
+        }
+        return sum;
+    }
     int numIdenticalPairs(vector<int>& nums) {
         int n=nums.size();
         int count=0;
-        for(int i=0;i<n-1;i++)
+        map<int,int>mp;
+        for(int i=0;i<n;i++)
         {
-            for(int j=i+1;j<n;j++)
-            {
-                if(nums[i]==nums[j])
-                {
-                    count++;
-                }
-            }
+            mp[nums[i]]++;
+        }
+        for(auto val:mp)
+        {
+            count+=sum(val.second-1);
         }
         return count;
     }
