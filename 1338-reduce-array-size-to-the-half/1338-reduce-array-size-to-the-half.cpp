@@ -17,11 +17,11 @@ public:
         sort(v.begin(),v.end(),greater<int>());
         int sum=0,i=0;
         n=v.size();
-        while(sum!=n or i!=n-1)
+        while(sum<m and i<n)
         {
             sum+=v[i];
             i++;
-            if(sum>=m)  return i;
+            // if(sum>=m)  return i;
             
         }
         return i;
