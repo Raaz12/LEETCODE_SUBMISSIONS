@@ -2,22 +2,17 @@ class Solution {
 public:
      bool binSearch(vector <vector <int>> &mat, int n, int m, int x)
     {
-        for(int i=0;i<n;i++)
+         int i=0,j=m-1;
+        while(i<n and j>=0)
         {
-            int start=0,end=m-1;
-            while(start<=end)
+            if(mat[i][j]==x)    return true;
+            else if(mat[i][j]>x)
             {
-                int mid=start+(end-start)/2;
-                if(mat[i][mid]==x)  return true;
-                else if(mat[i][mid]>x)
-                {
-                    end=mid-1;
-                }
-                else{
-                    
-                    start=mid+1;
-                    
-                }
+                j--;
+            }
+            else
+            {
+                i++;
             }
         }
         return false;
