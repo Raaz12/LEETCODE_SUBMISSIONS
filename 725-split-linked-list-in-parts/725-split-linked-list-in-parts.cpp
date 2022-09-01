@@ -46,10 +46,15 @@ public:
                 while(k1-- and temp)
                 {
                     temp2->next=new ListNode(temp->val);
+                    
                     temp2=temp2->next;
+                    
                     temp=temp->next;
+                    
                 }
+            
             v.push_back(temp1->next);
+            
             rem--;
             
             
