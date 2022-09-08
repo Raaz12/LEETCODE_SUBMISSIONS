@@ -18,25 +18,33 @@ public:
         solve(root->right,v);
         v.push_back(root->val);
     }
+    
+    
+    
+    
     vector<int> postorderTraversal(TreeNode* root) {
         vector<int>v;
         if(root==nullptr)   return v;
         stack<TreeNode*>st1,st2;
         st1.push(root);
+        
+        
         while(!st1.empty())
         {
             root=st1.top();
             st1.pop();
-            st2.push(root);
+           v.push_back(root->val);
             if(root->left!=NULL)    st1.push(root->left);
             if(root->right!=nullptr)    st1.push(root->right);
         }
-        while(!st2.empty())
-        {
-            root=st2.top();
-            st2.pop();
-            v.push_back(root->val);
-        }
+        reverse(v.begin(),v.end());
+        
+        // while(!st2.empty())
+        // {
+        //     root=st2.top();
+        //     st2.pop();
+        //     v.push_back(root->val);
+        // }
         return v;
         
         
